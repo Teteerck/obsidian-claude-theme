@@ -1,0 +1,511 @@
+/*
+╔══════════════════════════════════════════════════════════════════╗
+║                        CLAUDE THEME By Teteerck                   ║
+║           Inspired by Claude's warm, clean interface              ║
+╚══════════════════════════════════════════════════════════════════╝
+*/
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*                         COLOR PALETTE                            */
+/* ═══════════════════════════════════════════════════════════════ */
+
+body.theme-light {
+  /* Warm neutrals - inspired by Claude's interface */
+  --background-primary: #FAFAF8;
+  --background-secondary: #F4F3F1;
+  --background-secondary-alt: #EAEAE8;
+  --background-modifier-border: #E0DFDD;
+  --background-modifier-hover: #F7F6F4;
+  
+  /* Text colors - warm and readable */
+  --text-normal: #2C2B29;
+  --text-muted: #6B6866;
+  --text-faint: #9B9894;
+  
+  /* Accent - Claude's signature warm orange */
+  --interactive-accent: #CC6B3C;
+  --interactive-accent-hover: #B85A2E;
+  
+  /* Links */
+  --link-color: #CC6B3C;
+  --link-color-hover: #B85A2E;
+  --link-external-color: #8B7355;
+  
+  /* Code blocks */
+  --code-background: #F4F3F1;
+  --code-normal: #8B4513;
+  
+  /* Highlights */
+  --text-highlight-bg: #FFF4E6;
+  --text-selection: #FFE8CC;
+}
+
+body.theme-dark {
+  /* Dark warm palette - EXACT Claude colors */
+  --background-primary: #262624;
+  --background-secondary: #30302E;
+  --background-secondary-alt: #363432;
+  --background-modifier-border: #3D3B39;
+  --background-modifier-hover: #2E2C2A;
+  
+  /* Title bar color */
+  --titlebar-background-focused: #30302E;
+  --titlebar-background: #30302E;
+  
+  /* Text colors */
+  --text-normal: #E8E6E3;
+  --text-muted: #A39E9A;
+  --text-faint: #6B6866;
+  
+  /* Accent - Claude's exact orange */
+  --interactive-accent: #D97757;
+  --interactive-accent-hover: #E38866;
+  
+  /* Links */
+  --link-color: #D97757;
+  --link-color-hover: #E38866;
+  --link-external-color: #C9A876;
+  
+  /* Code blocks */
+  --code-background: #2A2826;
+  --code-normal: #E8A87C;
+  
+  /* Highlights */
+  --text-highlight-bg: rgba(217, 119, 87, 0.15);
+  --text-selection: rgba(217, 119, 87, 0.25);
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*                          TYPOGRAPHY                              */
+/* ═══════════════════════════════════════════════════════════════ */
+
+body {
+  /* Fonts - clean and professional */
+  --font-text: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "SF Pro Display", sans-serif;
+  --font-monospace: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Menlo, "Courier New", monospace;
+  
+  /* Font sizes */
+  --font-text-size: 16px;
+  --font-small: 14px;
+  --font-smaller: 13px;
+  --font-smallest: 12px;
+  
+  /* Line height - comfortable reading */
+  --line-height-normal: 1.7;
+  --line-height-tight: 1.5;
+  
+  /* Font weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*                         INLINE TITLE                             */
+/* ═══════════════════════════════════════════════════════════════ */
+
+body {
+  --inline-title-color: var(--text-normal);
+  --inline-title-font: var(--font-text);
+  --inline-title-line-height: 1.3;
+  --inline-title-size: 32px;
+  --inline-title-style: normal;
+  --inline-title-variant: normal;
+  --inline-title-weight: 700;
+  --inline-title-margin-bottom: 1.2em;
+}
+
+.inline-title {
+  margin-bottom: var(--inline-title-margin-bottom);
+  letter-spacing: -0.02em;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*                          HEADINGS                                */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.markdown-preview-view h1,
+.cm-header-1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-normal);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  letter-spacing: -0.02em;
+}
+
+.markdown-preview-view h2,
+.cm-header-2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-normal);
+  margin-top: 1.4em;
+  margin-bottom: 0.5em;
+  letter-spacing: -0.01em;
+}
+
+.markdown-preview-view h3,
+.cm-header-3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-normal);
+  margin-top: 1.3em;
+  margin-bottom: 0.5em;
+}
+
+.markdown-preview-view h4,
+.cm-header-4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 1.2em;
+  margin-bottom: 0.4em;
+}
+
+.markdown-preview-view h5,
+.cm-header-5 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 1.1em;
+  margin-bottom: 0.4em;
+}
+
+.markdown-preview-view h6,
+.cm-header-6 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 1em;
+  margin-bottom: 0.3em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*                         PARAGRAPHS                               */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.markdown-preview-view p {
+  margin-bottom: 1.2em;
+  line-height: var(--line-height-normal);
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*                           LINKS                                  */
+/* ═══════════════════════════════════════════════════════════════ */
+
+a,
+.cm-link,
+.internal-link {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover,
+.cm-link:hover,
+.internal-link:hover {
+  color: var(--link-color-hover);
+  text-decoration: underline;
+}
+
+.external-link {
+  color: var(--link-external-color);
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*                         CODE BLOCKS                              */
+/* ═══════════════════════════════════════════════════════════════ */
+
+code {
+  font-family: var(--font-monospace);
+  font-size: 0.9em;
+  background-color: var(--code-background);
+  color: var(--code-normal);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+pre code {
+  display: block;
+  padding: 1em;
+  line-height: 1.6;
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.cm-s-obsidian span.cm-inline-code {
+  font-family: var(--font-monospace);
+  background-color: var(--code-background);
+  color: var(--code-normal);
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*                        BLOCKQUOTES                               */
+/* ═══════════════════════════════════════════════════════════════ */
+
+blockquote {
+  border-left: 3px solid var(--interactive-accent);
+  background-color: var(--background-secondary);
+  padding: 0.8em 1.2em;
+  margin: 1.5em 0;
+  border-radius: 0 6px 6px 0;
+}
+
+blockquote p {
+  margin: 0.5em 0;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*                           LISTS                                  */
+/* ═══════════════════════════════════════════════════════════════ */
+
+ul, ol {
+  padding-left: 1.8em;
+  margin-bottom: 1.2em;
+}
+
+li {
+  margin-bottom: 0.4em;
+  line-height: var(--line-height-normal);
+}
+
+.markdown-preview-view ul > li::marker {
+  color: var(--interactive-accent);
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*                        CHECKBOXES                                */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.markdown-preview-view .task-list-item-checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--interactive-accent);
+  border-radius: 4px;
+  margin-right: 0.5em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.markdown-preview-view .task-list-item-checkbox:checked {
+  background-color: var(--interactive-accent);
+  border-color: var(--interactive-accent);
+}
+
+.markdown-preview-view .task-list-item-checkbox:checked::after {
+  content: "✓";
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*                         CALLOUTS                                 */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.callout {
+  border-radius: 8px;
+  padding: 1em 1.2em;
+  margin: 1.5em 0;
+  border-left: 4px solid var(--interactive-accent);
+  background-color: var(--background-secondary);
+}
+
+.callout-title {
+  font-weight: 600;
+  color: var(--text-normal);
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*                       TABLES                                     */
+/* ═══════════════════════════════════════════════════════════════ */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5em 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  background-color: var(--background-secondary);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.8em 1em;
+  border-bottom: 2px solid var(--background-modifier-border);
+}
+
+td {
+  padding: 0.8em 1em;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+tr:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*                      SIDEBAR & UI                                */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.workspace-leaf-content {
+  padding: 0;
+}
+
+.view-content {
+  padding: 2em 4em;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* File explorer */
+.nav-folder-title,
+.nav-file-title {
+  padding: 0.4em 0.8em;
+  border-radius: 6px;
+  transition: background-color 0.15s ease;
+}
+
+.nav-folder-title:hover,
+.nav-file-title:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+.nav-file-title.is-active {
+  background-color: var(--background-secondary);
+  color: var(--interactive-accent);
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*                       SCROLLBARS                                 */
+/* ═══════════════════════════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--background-modifier-border);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-faint);
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*                     BUTTONS & INPUTS                             */
+/* ═══════════════════════════════════════════════════════════════ */
+
+button {
+  border-radius: 6px;
+  padding: 0.5em 1em;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.mod-cta,
+.suggestion-item.is-selected {
+  background-color: var(--interactive-accent);
+  color: white;
+}
+
+.mod-cta:hover,
+.suggestion-item.is-selected:hover {
+  background-color: var(--interactive-accent-hover);
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*                        GRAPH VIEW                                */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.graph-view.color-fill {
+  color: var(--interactive-accent);
+}
+
+.graph-view.color-line {
+  color: var(--text-faint);
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*                         TAGS                                     */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.tag {
+  background-color: var(--background-secondary);
+  color: var(--interactive-accent);
+  border-radius: 4px;
+  padding: 0.2em 0.6em;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: background-color 0.15s ease;
+}
+
+.tag:hover {
+  background-color: var(--interactive-accent);
+  color: white;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*                     SEARCH RESULTS                               */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.search-result-file-match {
+  background-color: var(--text-highlight-bg);
+  border-radius: 3px;
+  padding: 0 0.2em;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*                    MOBILE ADJUSTMENTS                            */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.is-mobile .view-content {
+  padding: 1em 1.5em;
+}
+
+.is-mobile body {
+  --inline-title-size: 28px;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/*                     FINAL TOUCHES                                */
+/* ═══════════════════════════════════════════════════════════════ */
+
+/* Smooth transitions */
+* {
+  transition-property: background-color, border-color, color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--text-selection);
+}
+
+/* Focus outlines */
+*:focus-visible {
+  outline: 2px solid var(--interactive-accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
