@@ -1,7 +1,7 @@
 {
-  "name": "Claude Theme",
+  "name": "Claude",
   "version": "1.0.0",
-  "author": "Teteerck",
-  "description": "A theme inspired by Claude's clean, warm, and professional interface",
+  "author": "Ricardo",
+  "description": "A warm, clean, and professional theme inspired by Claude's interface",
   "minAppVersion": "0.16.0"
 }
